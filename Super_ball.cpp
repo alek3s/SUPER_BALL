@@ -23,7 +23,7 @@ struct Tiragi
     int Date_Month;//месяц тиража
     int Date_Year;//год тиража
 
-    int Ball_1;//выпавшие номера
+    int Ball_1;//выпавшие шары
     int Ball_2;
     int Ball_3;
     int Ball_4;
