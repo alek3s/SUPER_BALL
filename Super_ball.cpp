@@ -12,7 +12,7 @@
 #include <iostream>
 #include <fstream>
 
-using namespace std;
+
 
 //структура содержит все данные о тиражах
 struct Tiragi
@@ -51,6 +51,8 @@ int SD_Tiragi = 0;       //для ввода количества тиражей
 int SD_Ball = 0;         //для ввода количества чисел, учавствующих в тираже
 int Count_T= 0;          //счетчик количества тиражей считаных из файла
 
+
+using namespace std;
 int main()
 {
     char buf;           //промежуточный буфер
@@ -181,7 +183,7 @@ int main()
     File_Read.close();//закрываем файл
     buf = 0;
     //все готово для анализа 
-
+    
 
     while (1)
     {
