@@ -72,16 +72,15 @@ int main()
     ifstream File_Read;
 
     string str;
-
-    cout << "введите количество  SD_Tiragi " << '\n';
+    //динамический массив из структур (тут результаты тиражей в памяти)
+    cout << "Введите количество  тиражей " << '\n';
     cout << "SD_Tiragi -> ";
     cin >> SD_Tiragi;
-    Tiragi* DTiragi = new Tiragi[SD_Tiragi];//динамический массив из структур)тут результаты тиражей в памяти)
+    Tiragi* DTiragi = new Tiragi[SD_Tiragi];
 
     //создаем динамический масив структур шаров с их характеристиками
-    cout << "введите количество  SD_Ball" << '\n';
-    cout << "SDBool -> ";
-
+    cout << "введите количество шаров " << '\n';
+    cout << "SD_Ball -> ";
     cin >> SD_Ball;
     Ball* DBall = new Ball[SD_Ball];
 
@@ -96,9 +95,9 @@ int main()
         {
             File_Read >> buf;
 
-            if ((58 > buf) && (buf >= 48))//если это цифра
+            if ((58 > buf) && (buf >= 48))   //если это цифра
             {
-                cout << buf;//выводим на экран
+                cout << buf; //выводим на экран
                 str.push_back(buf);
                 flag = 0;
             }
