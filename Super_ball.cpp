@@ -76,13 +76,13 @@ int main()
     cout << "Введите количество  тиражей " << '\n';
     cout << "SD_Tiragi -> ";
     cin >> SD_Tiragi;
-    Tiragi* DTiragi = new Tiragi[SD_Tiragi];
+    Tiragi* D_Tiragi = new Tiragi[SD_Tiragi];
 
     //создаем динамический масив структур шаров с их характеристиками
     cout << "введите количество шаров " << '\n';
     cout << "SD_Ball -> ";
     cin >> SD_Ball;
-    Ball* DBall = new Ball[SD_Ball];
+    Ball* D_Ball = new Ball[SD_Ball];
 
 
     //организовываем считывание файла при первом запуске программы
@@ -115,43 +115,43 @@ int main()
                         switch (flag_2)
                         {
                         case 1://если это первое число в строке 
-                            DTiragi[Count_T].id = atoi(str.c_str());
+                            D_Tiragi[Count_T].id = atoi(str.c_str());
                             flag_2++;
                             break;
                         case 2://если это второе число в строке 
-                            DTiragi[Count_T].Date_Day = atoi(str.c_str());
+                            D_Tiragi[Count_T].Date_Day = atoi(str.c_str());
                             flag_2++;
                             break;
                         case 3://если это третье число в строке 
-                            DTiragi[Count_T].Date_Month = atoi(str.c_str());
+                            D_Tiragi[Count_T].Date_Month = atoi(str.c_str());
                             flag_2++;
                             break;
                         case 4://если это четвертое число в строке 
-                            DTiragi[Count_T].Date_Year = atoi(str.c_str());
+                            D_Tiragi[Count_T].Date_Year = atoi(str.c_str());
                             flag_2++;
                             break;
                         case 5://если это пятое число в строке 
-                            DTiragi[Count_T].Ball_1 = atoi(str.c_str());
+                            D_Tiragi[Count_T].Ball_1 = atoi(str.c_str());
                             flag_2++;
                             break;
                         case 6://если это шестое число в строке 
-                            DTiragi[Count_T].Ball_2 = atoi(str.c_str());
+                            D_Tiragi[Count_T].Ball_2 = atoi(str.c_str());
                             flag_2++;
                             break;
                         case 7://если это седьмое число в строке 
-                            DTiragi[Count_T].Ball_3 = atoi(str.c_str());
+                            D_Tiragi[Count_T].Ball_3 = atoi(str.c_str());
                             flag_2++;
                             break;
                         case 8://если это восьмое число в строке 
-                            DTiragi[Count_T].Ball_4 = atoi(str.c_str());
+                            D_Tiragi[Count_T].Ball_4 = atoi(str.c_str());
                             flag_2++;
                             break;
                         case 9://если это третье число в строке 
-                            DTiragi[Count_T].Ball_5 = atoi(str.c_str());
+                            D_Tiragi[Count_T].Ball_5 = atoi(str.c_str());
                             flag_2++;
                             break;
                         case 10://если это третье число в строке 
-                            DTiragi[Count_T].Ball_6 = atoi(str.c_str());
+                            D_Tiragi[Count_T].Ball_6 = atoi(str.c_str());
                             flag_2++;
                             break;
                         default:
@@ -190,21 +190,21 @@ int main()
             //очищаем массив структур шаров
             for (int a = 0; a < SD_Ball; a++)
             {
-                DBall[a].Last = 0;
-                DBall[a].Often = 0.0;
-                DBall[a].Weight = 0;
-                DBall[a].YES = false;
+                D_Ball[a].Last = 0;
+                D_Ball[a].Often = 0.0;
+                D_Ball[a].Weight = 0;
+                D_Ball[a].YES = false;
             }
             for (int a = 0; a < SD_Ball; a++)//выбираем первый шар
             {
                 for (int b = 0; b < Count_T; b++)//пересматриваем все тиражи и вычисляем вес и частоту каждого шара
                 {
-                    if ((a + 1) == DTiragi[b].Ball_1) { DBall[a].Weight++; DBall[a].Often = (static_cast<double>(Count_T) / DBall[a].Weight); }
-                    if ((a + 1) == DTiragi[b].Ball_2) { DBall[a].Weight++; DBall[a].Often = (static_cast<double>(Count_T) / DBall[a].Weight); }
-                    if ((a + 1) == DTiragi[b].Ball_3) { DBall[a].Weight++; DBall[a].Often = (static_cast<double>(Count_T) / DBall[a].Weight); }
-                    if ((a + 1) == DTiragi[b].Ball_4) { DBall[a].Weight++; DBall[a].Often = (static_cast<double>(Count_T) / DBall[a].Weight); }
-                    if ((a + 1) == DTiragi[b].Ball_5) { DBall[a].Weight++; DBall[a].Often = (static_cast<double>(Count_T) / DBall[a].Weight); }
-                    if ((a + 1) == DTiragi[b].Ball_6) { DBall[a].Weight++; DBall[a].Often = (static_cast<double>(Count_T) / DBall[a].Weight); }
+                    if ((a + 1) == D_Tiragi[b].Ball_1) { D_Ball[a].Weight++; D_Ball[a].Often = (static_cast<double>(Count_T) / D_Ball[a].Weight); }
+                    if ((a + 1) == D_Tiragi[b].Ball_2) { D_Ball[a].Weight++; D_Ball[a].Often = (static_cast<double>(Count_T) / D_Ball[a].Weight); }
+                    if ((a + 1) == D_Tiragi[b].Ball_3) { D_Ball[a].Weight++; D_Ball[a].Often = (static_cast<double>(Count_T) / D_Ball[a].Weight); }
+                    if ((a + 1) == D_Tiragi[b].Ball_4) { D_Ball[a].Weight++; D_Ball[a].Often = (static_cast<double>(Count_T) / D_Ball[a].Weight); }
+                    if ((a + 1) == D_Tiragi[b].Ball_5) { D_Ball[a].Weight++; D_Ball[a].Often = (static_cast<double>(Count_T) / D_Ball[a].Weight); }
+                    if ((a + 1) == D_Tiragi[b].Ball_6) { D_Ball[a].Weight++; D_Ball[a].Often = (static_cast<double>(Count_T) / D_Ball[a].Weight); }
                 }
             }
             //ищем сколько тиражей прошло после последнего выпадания
@@ -213,22 +213,22 @@ int main()
                 for (int b = Count_T - 1; b >= 0; b--)//пересматриваем все тиражи
                 {
 
-                    if ((a + 1) == DTiragi[b].Ball_1) { DBall[a].Last = Count_T - b; break; }
-                    if ((a + 1) == DTiragi[b].Ball_2) { DBall[a].Last = Count_T - b; break; }
-                    if ((a + 1) == DTiragi[b].Ball_3) { DBall[a].Last = Count_T - b; break; }
-                    if ((a + 1) == DTiragi[b].Ball_4) { DBall[a].Last = Count_T - b; break; }
-                    if ((a + 1) == DTiragi[b].Ball_5) { DBall[a].Last = Count_T - b; break; }
-                    if ((a + 1) == DTiragi[b].Ball_6) { DBall[a].Last = Count_T - b; break; }
+                    if ((a + 1) == D_Tiragi[b].Ball_1) { D_Ball[a].Last = Count_T - b; break; }
+                    if ((a + 1) == D_Tiragi[b].Ball_2) { D_Ball[a].Last = Count_T - b; break; }
+                    if ((a + 1) == D_Tiragi[b].Ball_3) { D_Ball[a].Last = Count_T - b; break; }
+                    if ((a + 1) == D_Tiragi[b].Ball_4) { D_Ball[a].Last = Count_T - b; break; }
+                    if ((a + 1) == D_Tiragi[b].Ball_5) { D_Ball[a].Last = Count_T - b; break; }
+                    if ((a + 1) == D_Tiragi[b].Ball_6) { D_Ball[a].Last = Count_T - b; break; }
                 }
             }
             //анализируем наиболее вероятные шары к выпаданию в следующем тираже (которые давно не выпадали)
             for (int a = 0; a < SD_Ball; a++)
             {
 
-                if (0 > (DBall[a].Often - static_cast<double>(DBall[a].Last)))
+                if (0 > (D_Ball[a].Often - static_cast<double>(D_Ball[a].Last)))
                 {
                     //рекомендуем к использованию
-                    DBall[a].YES = true;
+                    D_Ball[a].YES = true;
                 }
             }
 
@@ -246,24 +246,24 @@ int main()
             for (int a = 0; a < 49; a++)//выводим масив
                 // который показывает сколько раз за все тиражы выпадало определенный шар
             {
-                File_Write << "    " << a << "    " << "Шар номер" << "    " << a + 1 << "   " << "выпадал" << "  " << DBall[a].Weight << "  " << "раз" << '\n';
+                File_Write << "    " << a << "    " << "Шар номер" << "    " << a + 1 << "   " << "выпадал" << "  " << D_Ball[a].Weight << "  " << "раз" << '\n';
             }
             //выводим результат поиска выпадания двух чисел (вес и частоту)
             for (int j = 0; j < 49; j++)
             {
-                if (DBall[j].Weight > 0)
+                if (D_Ball[j].Weight > 0)
                 {
                     File_Write << j << "    " << "число :" << "    "
                         << (j + 1)
                         << "    "
                         << "выпадало" << "    "
-                        << DBall[j].Weight << "    " << "раз"
+                        << D_Ball[j].Weight << "    " << "раз"
                         << "    " << "частота:"
                         << "    " << "выпадает каждый" << "    "
-                        << DBall[j].Often
+                        << D_Ball[j].Often
                         << "    " << "тираж" << "    "
                         << "последний раз выпадал" << "    "
-                        << DBall[j].Last
+                        << D_Ball[j].Last
                         << "    " << "тиражей назад"
                         << "\n";
                 }
@@ -271,7 +271,7 @@ int main()
             //выводим результат наиболее ожидаемых вероятных шаров одиночек
             for (int j = 0; j < 49; j++)
             {
-                if (DBall[j].YES == true)
+                if (D_Ball[j].YES == true)
                 {
                     File_Write << "возможно выпадение числа :" << "    " << (j + 1) << "\n";
 
@@ -324,73 +324,73 @@ int main()
 
                     for (c = 0; c < Count_T; c++)//пересматриваем все тиражи
                     {
-                        if (a == DTiragi[c].Ball_1)
+                        if (a == D_Tiragi[c].Ball_1)
                         {
                             a_ok = true;
                             //ищем второй шар
-                            if (b == DTiragi[c].Ball_1) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_2) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_3) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_4) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_5) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_6) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_1) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_2) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_3) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_4) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_5) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_6) { b_ok = true; }
 
                         }
-                        if (a == DTiragi[c].Ball_2)
+                        if (a == D_Tiragi[c].Ball_2)
                         {
                             a_ok = true;
                             //ищем второй шар
-                            if (b == DTiragi[c].Ball_1) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_2) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_3) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_4) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_5) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_6) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_1) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_2) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_3) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_4) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_5) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_6) { b_ok = true; }
 
                         }
-                        if (a == DTiragi[c].Ball_3)
+                        if (a == D_Tiragi[c].Ball_3)
                         {
                             a_ok = true;
                             //ищем второй шар
-                            if (b == DTiragi[c].Ball_1) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_2) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_3) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_4) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_5) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_6) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_1) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_2) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_3) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_4) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_5) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_6) { b_ok = true; }
                         }
-                        if (a == DTiragi[c].Ball_4)
+                        if (a == D_Tiragi[c].Ball_4)
                         {
                             a_ok = true;
                             //ищем второй шар
-                            if (b == DTiragi[c].Ball_1) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_2) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_3) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_4) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_5) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_6) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_1) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_2) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_3) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_4) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_5) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_6) { b_ok = true; }
                         }
-                        if (a == DTiragi[c].Ball_5)
+                        if (a == D_Tiragi[c].Ball_5)
                         {
                             a_ok = true;
                             //ищем второй шар
-                            if (b == DTiragi[c].Ball_1) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_2) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_3) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_4) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_5) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_6) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_1) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_2) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_3) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_4) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_5) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_6) { b_ok = true; }
                         }
-                        if (a == DTiragi[c].Ball_6)
+                        if (a == D_Tiragi[c].Ball_6)
                         {
                             a_ok = true;
                             //ищем второй шар
-                            if (b == DTiragi[c].Ball_1) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_2) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_3) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_4) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_5) { b_ok = true; }
-                            if (b == DTiragi[c].Ball_6) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_1) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_2) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_3) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_4) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_5) { b_ok = true; }
+                            if (b == D_Tiragi[c].Ball_6) { b_ok = true; }
                         }
                         //сохраняем результаты после каждой строки
                         if (a_ok && b_ok)
@@ -458,10 +458,10 @@ int main()
             //очищаем массив структур шаров
             for (int a = 0; a < SD_Ball; a++)
             {
-                DBall[a].Last = 0;
-                DBall[a].Often = 0.0;
-                DBall[a].Weight = 0;
-                DBall[a].YES = false;
+                D_Ball[a].Last = 0;
+                D_Ball[a].Often = 0.0;
+                D_Ball[a].Weight = 0;
+                D_Ball[a].YES = false;
             }
             //открываем файл для записи
             ofstream File_Write("10.txt", ios_base::out | ios_base::trunc);
@@ -477,15 +477,15 @@ int main()
                 //очищаем массив структур шаров
                 for (int a = 0; a < SD_Ball; a++)
                 {
-                    DBall[a].Last = 0;
-                    DBall[a].Often = 0.0;
-                    DBall[a].Weight = 0;
-                    DBall[a].YES = false;
+                    D_Ball[a].Last = 0;
+                    D_Ball[a].Often = 0.0;
+                    D_Ball[a].Weight = 0;
+                    D_Ball[a].YES = false;
                 }
                 //выводим номер тиража и выпавшие номера
-                File_Write << "Тираж № " << c + 1 << "(" << DTiragi[c].id << ")" << "Номера : " << DTiragi[c].Ball_1 << ", "
-                    << DTiragi[c].Ball_2 << ", " << DTiragi[c].Ball_3 << ", " << DTiragi[c].Ball_4 << ", "
-                    << DTiragi[c].Ball_5 << ", " << DTiragi[c].Ball_6 << ", " << '\n';
+                File_Write << "Тираж № " << c + 1 << "(" << D_Tiragi[c].id << ")" << "Номера : " << D_Tiragi[c].Ball_1 << ", "
+                    << D_Tiragi[c].Ball_2 << ", " << D_Tiragi[c].Ball_3 << ", " << D_Tiragi[c].Ball_4 << ", "
+                    << D_Tiragi[c].Ball_5 << ", " << D_Tiragi[c].Ball_6 << ", " << '\n';
 
 
 
@@ -494,35 +494,35 @@ int main()
                 {
                     for (int b = 0; b <= c; b++) //пересматриваем все тиражи и вычисляем вес и частоту каждого шара
                     {
-                        if ((a + 1) == DTiragi[b].Ball_1)
+                        if ((a + 1) == D_Tiragi[b].Ball_1)
                         {
-                            DBall[a].Weight++;
-                            DBall[a].Often = (static_cast<double>(c + 1) / DBall[a].Weight);
+                            D_Ball[a].Weight++;
+                            D_Ball[a].Often = (static_cast<double>(c + 1) / D_Ball[a].Weight);
                         }
-                        if ((a + 1) == DTiragi[b].Ball_2)
+                        if ((a + 1) == D_Tiragi[b].Ball_2)
                         {
-                            DBall[a].Weight++;
-                            DBall[a].Often = (static_cast<double>(c + 1) / DBall[a].Weight);
+                            D_Ball[a].Weight++;
+                            D_Ball[a].Often = (static_cast<double>(c + 1) / D_Ball[a].Weight);
                         }
-                        if ((a + 1) == DTiragi[b].Ball_3)
+                        if ((a + 1) == D_Tiragi[b].Ball_3)
                         {
-                            DBall[a].Weight++;
-                            DBall[a].Often = (static_cast<double>(c + 1) / DBall[a].Weight);
+                            D_Ball[a].Weight++;
+                            D_Ball[a].Often = (static_cast<double>(c + 1) / D_Ball[a].Weight);
                         }
-                        if ((a + 1) == DTiragi[b].Ball_4)
+                        if ((a + 1) == D_Tiragi[b].Ball_4)
                         {
-                            DBall[a].Weight++;
-                            DBall[a].Often = (static_cast<double>(c + 1) / DBall[a].Weight);
+                            D_Ball[a].Weight++;
+                            D_Ball[a].Often = (static_cast<double>(c + 1) / D_Ball[a].Weight);
                         }
-                        if ((a + 1) == DTiragi[b].Ball_5)
+                        if ((a + 1) == D_Tiragi[b].Ball_5)
                         {
-                            DBall[a].Weight++;
-                            DBall[a].Often = (static_cast<double>(c + 1) / DBall[a].Weight);
+                            D_Ball[a].Weight++;
+                            D_Ball[a].Often = (static_cast<double>(c + 1) / D_Ball[a].Weight);
                         }
-                        if ((a + 1) == DTiragi[b].Ball_6)
+                        if ((a + 1) == D_Tiragi[b].Ball_6)
                         {
-                            DBall[a].Weight++;
-                            DBall[a].Often = (static_cast<double>(c + 1) / DBall[a].Weight);
+                            D_Ball[a].Weight++;
+                            D_Ball[a].Often = (static_cast<double>(c + 1) / D_Ball[a].Weight);
                         }
                     }
                 }
@@ -532,22 +532,22 @@ int main()
                     for (int b = c; b >= 0; b--)//пересматриваем все тиражи
                     {
 
-                        if ((a + 1) == DTiragi[b].Ball_1) { DBall[a].Last = c - b; break; }
-                        if ((a + 1) == DTiragi[b].Ball_2) { DBall[a].Last = c - b; break; }
-                        if ((a + 1) == DTiragi[b].Ball_3) { DBall[a].Last = c - b; break; }
-                        if ((a + 1) == DTiragi[b].Ball_4) { DBall[a].Last = c - b; break; }
-                        if ((a + 1) == DTiragi[b].Ball_5) { DBall[a].Last = c - b; break; }
-                        if ((a + 1) == DTiragi[b].Ball_6) { DBall[a].Last = c - b; break; }
+                        if ((a + 1) == D_Tiragi[b].Ball_1) { D_Ball[a].Last = c - b; break; }
+                        if ((a + 1) == D_Tiragi[b].Ball_2) { D_Ball[a].Last = c - b; break; }
+                        if ((a + 1) == D_Tiragi[b].Ball_3) { D_Ball[a].Last = c - b; break; }
+                        if ((a + 1) == D_Tiragi[b].Ball_4) { D_Ball[a].Last = c - b; break; }
+                        if ((a + 1) == D_Tiragi[b].Ball_5) { D_Ball[a].Last = c - b; break; }
+                        if ((a + 1) == D_Tiragi[b].Ball_6) { D_Ball[a].Last = c - b; break; }
                     }
                 }
                 //анализируем наиболее вероятные шары к выпаданию в следующем тираже (которые давно не выпадали)
                 for (int a = 0; a < SD_Ball; a++)
                 {
 
-                    if (0 > (DBall[a].Often - static_cast<double>(DBall[a].Last)))
+                    if (0 > (D_Ball[a].Often - static_cast<double>(D_Ball[a].Last)))
                     {
                         //рекомендуем к использованию
-                        DBall[a].YES = true;
+                        D_Ball[a].YES = true;
                     }
                 }
 
@@ -560,29 +560,29 @@ int main()
                     int poz = 0;//предыдущая позиция(номер тиража)
                     for (int C = 0; C < Count_T; C++)//прогоняем по тиражам
                     {
-                        if ((a + 1) == DTiragi[c].Ball_1)
+                        if ((a + 1) == D_Tiragi[c].Ball_1)
                         {
                             one = true;
-                            poz = DTiragi[c].id;
+                            poz = D_Tiragi[c].id;
                             //break;
                         }
-                        if ((a + 1) == DTiragi[c].Ball_2)
+                        if ((a + 1) == D_Tiragi[c].Ball_2)
                         {
                             //break;
                         }
-                        if ((a + 1) == DTiragi[c].Ball_3)
+                        if ((a + 1) == D_Tiragi[c].Ball_3)
                         {
                             //break;
                         }
-                        if ((a + 1) == DTiragi[c].Ball_4)
+                        if ((a + 1) == D_Tiragi[c].Ball_4)
                         {
                             //break;
                         }
-                        if ((a + 1) == DTiragi[c].Ball_5)
+                        if ((a + 1) == D_Tiragi[c].Ball_5)
                         {
                             //break;
                         }
-                        if ((a + 1) == DTiragi[c].Ball_6)
+                        if ((a + 1) == D_Tiragi[c].Ball_6)
                         {
                             //break;
                         }
@@ -597,13 +597,13 @@ int main()
 
                 for (int j = 0; j < 49; j++)
                 {
-                    if (DBall[j].Weight > 0)
+                    if (D_Ball[j].Weight > 0)
                     {
                         File_Write << "число :" << " "
                             << (j + 1) << " " << "выпадало"
-                            << " " << DBall[j].Weight << " "
-                            << "раз" << " " << "Частота:" << " " << "выпадает каждый" << " " << DBall[j].Often << " " << "тираж"
-                            << " " << "последний раз выпадал" << " " << DBall[j].Last << " " << "тиражей назад" << "\n";
+                            << " " << D_Ball[j].Weight << " "
+                            << "раз" << " " << "Частота:" << " " << "выпадает каждый" << " " << D_Ball[j].Often << " " << "тираж"
+                            << " " << "последний раз выпадал" << " " << D_Ball[j].Last << " " << "тиражей назад" << "\n";
                     }
                 }
                 File_Write << "\n\n";
@@ -611,7 +611,7 @@ int main()
                 File_Write << "возможно выпадение числа : ";
                 for (int j = 0; j < 49; j++)
                 {
-                    if (DBall[j].YES == true)
+                    if (D_Ball[j].YES == true)
                     {
                         File_Write << (j + 1) << ", ";
 
@@ -682,399 +682,399 @@ int main()
 
                         for (c = 0; c < Count_T; c++)//пересматриваем все тиражи
                         {
-                            if (a_1 == DTiragi[c].Ball_1)//ищем первый шар
+                            if (a_1 == D_Tiragi[c].Ball_1)//ищем первый шар
                             {
                                 a_1_ok = true;
-                                if (a_2 == DTiragi[c].Ball_1) //ищем второй шар
+                                if (a_2 == D_Tiragi[c].Ball_1) //ищем второй шар
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_2)
+                                if (a_2 == D_Tiragi[c].Ball_2)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
 
                                 }
-                                if (a_2 == DTiragi[c].Ball_3)
+                                if (a_2 == D_Tiragi[c].Ball_3)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_4)
+                                if (a_2 == D_Tiragi[c].Ball_4)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_5)
+                                if (a_2 == D_Tiragi[c].Ball_5)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_6)
+                                if (a_2 == D_Tiragi[c].Ball_6)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
 
                             }
-                            if (a_1 == DTiragi[c].Ball_2)
+                            if (a_1 == D_Tiragi[c].Ball_2)
                             {
                                 a_1_ok = true;
-                                if (a_2 == DTiragi[c].Ball_1) //ищем второй шар
+                                if (a_2 == D_Tiragi[c].Ball_1) //ищем второй шар
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_2)
+                                if (a_2 == D_Tiragi[c].Ball_2)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
 
                                 }
-                                if (a_2 == DTiragi[c].Ball_3)
+                                if (a_2 == D_Tiragi[c].Ball_3)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_4)
+                                if (a_2 == D_Tiragi[c].Ball_4)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_5)
+                                if (a_2 == D_Tiragi[c].Ball_5)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_6)
+                                if (a_2 == D_Tiragi[c].Ball_6)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
 
                             }
-                            if (a_1 == DTiragi[c].Ball_3)
+                            if (a_1 == D_Tiragi[c].Ball_3)
                             {
                                 a_1_ok = true;
-                                if (a_2 == DTiragi[c].Ball_1) //ищем второй шар
+                                if (a_2 == D_Tiragi[c].Ball_1) //ищем второй шар
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_2)
+                                if (a_2 == D_Tiragi[c].Ball_2)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
 
                                 }
-                                if (a_2 == DTiragi[c].Ball_3)
+                                if (a_2 == D_Tiragi[c].Ball_3)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_4)
+                                if (a_2 == D_Tiragi[c].Ball_4)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_5)
+                                if (a_2 == D_Tiragi[c].Ball_5)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_6)
+                                if (a_2 == D_Tiragi[c].Ball_6)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
 
                             }
-                            if (a_1 == DTiragi[c].Ball_4)
+                            if (a_1 == D_Tiragi[c].Ball_4)
                             {
                                 a_1_ok = true;
-                                if (a_2 == DTiragi[c].Ball_1) //ищем второй шар
+                                if (a_2 == D_Tiragi[c].Ball_1) //ищем второй шар
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_2)
+                                if (a_2 == D_Tiragi[c].Ball_2)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
 
                                 }
-                                if (a_2 == DTiragi[c].Ball_3)
+                                if (a_2 == D_Tiragi[c].Ball_3)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_4)
+                                if (a_2 == D_Tiragi[c].Ball_4)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_5)
+                                if (a_2 == D_Tiragi[c].Ball_5)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_6)
+                                if (a_2 == D_Tiragi[c].Ball_6)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
 
                             }
-                            if (a_1 == DTiragi[c].Ball_5)
+                            if (a_1 == D_Tiragi[c].Ball_5)
                             {
                                 a_1_ok = true;
-                                if (a_2 == DTiragi[c].Ball_1) //ищем второй шар
+                                if (a_2 == D_Tiragi[c].Ball_1) //ищем второй шар
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_2)
+                                if (a_2 == D_Tiragi[c].Ball_2)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
 
                                 }
-                                if (a_2 == DTiragi[c].Ball_3)
+                                if (a_2 == D_Tiragi[c].Ball_3)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_4)
+                                if (a_2 == D_Tiragi[c].Ball_4)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_5)
+                                if (a_2 == D_Tiragi[c].Ball_5)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_6)
+                                if (a_2 == D_Tiragi[c].Ball_6)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
 
                             }
-                            if (a_1 == DTiragi[c].Ball_6)
+                            if (a_1 == D_Tiragi[c].Ball_6)
                             {
                                 a_1_ok = true;
-                                if (a_2 == DTiragi[c].Ball_1) //ищем второй шар
+                                if (a_2 == D_Tiragi[c].Ball_1) //ищем второй шар
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_2)
+                                if (a_2 == D_Tiragi[c].Ball_2)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
 
                                 }
-                                if (a_2 == DTiragi[c].Ball_3)
+                                if (a_2 == D_Tiragi[c].Ball_3)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_4)
+                                if (a_2 == D_Tiragi[c].Ball_4)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_5)
+                                if (a_2 == D_Tiragi[c].Ball_5)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
-                                if (a_2 == DTiragi[c].Ball_6)
+                                if (a_2 == D_Tiragi[c].Ball_6)
                                 {
                                     a_2_ok = true;
-                                    if (a_3 == DTiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
-                                    if (a_3 == DTiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_1) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_2) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_3) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_4) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_5) { a_3_ok = true; }//ищем треттий шар
+                                    if (a_3 == D_Tiragi[c].Ball_6) { a_3_ok = true; }//ищем треттий шар
                                 }
 
                             }
@@ -1187,2408 +1187,2408 @@ int main()
 
                             for (c = 0; c < Count_T; c++)//пересматриваем все тиражи
                             {
-                                if (a_1 == DTiragi[c].Ball_1)//ищем первый шар
+                                if (a_1 == D_Tiragi[c].Ball_1)//ищем первый шар
                                 {
                                     a_1_ok = true;
-                                    if (a_2 == DTiragi[c].Ball_1) //ищем второй шар
+                                    if (a_2 == D_Tiragi[c].Ball_1) //ищем второй шар
                                     {
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_2)
+                                    if (a_2 == D_Tiragi[c].Ball_2)
                                     {
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
 
                                     }
-                                    if (a_2 == DTiragi[c].Ball_3)
+                                    if (a_2 == D_Tiragi[c].Ball_3)
                                     {
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_4)
+                                    if (a_2 == D_Tiragi[c].Ball_4)
                                     {
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_5)
+                                    if (a_2 == D_Tiragi[c].Ball_5)
                                     {
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_6)
+                                    if (a_2 == D_Tiragi[c].Ball_6)
                                     {
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
 
                                 }
-                                if (a_1 == DTiragi[c].Ball_2)
+                                if (a_1 == D_Tiragi[c].Ball_2)
                                 {
                                     a_1_ok = true;
-                                    if (a_2 == DTiragi[c].Ball_1) //ищем второй шар
+                                    if (a_2 == D_Tiragi[c].Ball_1) //ищем второй шар
                                     {
 
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_2)
+                                    if (a_2 == D_Tiragi[c].Ball_2)
                                     {
 
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
 
                                     }
-                                    if (a_2 == DTiragi[c].Ball_3)
+                                    if (a_2 == D_Tiragi[c].Ball_3)
                                     {
 
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_4)
+                                    if (a_2 == D_Tiragi[c].Ball_4)
                                     {
 
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_5)
+                                    if (a_2 == D_Tiragi[c].Ball_5)
                                     {
 
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_6)
+                                    if (a_2 == D_Tiragi[c].Ball_6)
                                     {
 
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
 
                                 }
-                                if (a_1 == DTiragi[c].Ball_3)
+                                if (a_1 == D_Tiragi[c].Ball_3)
                                 {
                                     a_1_ok = true;
-                                    if (a_2 == DTiragi[c].Ball_1) //ищем второй шар
+                                    if (a_2 == D_Tiragi[c].Ball_1) //ищем второй шар
                                     {
 
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_2)
+                                    if (a_2 == D_Tiragi[c].Ball_2)
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
 
                                     }
-                                    if (a_2 == DTiragi[c].Ball_3)
+                                    if (a_2 == D_Tiragi[c].Ball_3)
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_4)
+                                    if (a_2 == D_Tiragi[c].Ball_4)
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_5)
+                                    if (a_2 == D_Tiragi[c].Ball_5)
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_6)
+                                    if (a_2 == D_Tiragi[c].Ball_6)
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
 
                                 }
-                                if (a_1 == DTiragi[c].Ball_4)
+                                if (a_1 == D_Tiragi[c].Ball_4)
                                 {
                                     a_1_ok = true;
-                                    if (a_2 == DTiragi[c].Ball_1) //ищем второй шар
+                                    if (a_2 == D_Tiragi[c].Ball_1) //ищем второй шар
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_2)
+                                    if (a_2 == D_Tiragi[c].Ball_2)
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
 
                                     }
-                                    if (a_2 == DTiragi[c].Ball_3)
+                                    if (a_2 == D_Tiragi[c].Ball_3)
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_4)
+                                    if (a_2 == D_Tiragi[c].Ball_4)
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_5)
+                                    if (a_2 == D_Tiragi[c].Ball_5)
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_6)
+                                    if (a_2 == D_Tiragi[c].Ball_6)
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
 
                                 }
-                                if (a_1 == DTiragi[c].Ball_5)
+                                if (a_1 == D_Tiragi[c].Ball_5)
                                 {
                                     a_1_ok = true;
-                                    if (a_2 == DTiragi[c].Ball_1) //ищем второй шар
+                                    if (a_2 == D_Tiragi[c].Ball_1) //ищем второй шар
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_2)
+                                    if (a_2 == D_Tiragi[c].Ball_2)
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
 
                                     }
-                                    if (a_2 == DTiragi[c].Ball_3)
+                                    if (a_2 == D_Tiragi[c].Ball_3)
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_4)
+                                    if (a_2 == D_Tiragi[c].Ball_4)
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_5)
+                                    if (a_2 == D_Tiragi[c].Ball_5)
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_6)
+                                    if (a_2 == D_Tiragi[c].Ball_6)
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
 
                                 }
-                                if (a_1 == DTiragi[c].Ball_6)
+                                if (a_1 == D_Tiragi[c].Ball_6)
                                 {
                                     a_1_ok = true;
-                                    if (a_2 == DTiragi[c].Ball_1) //ищем второй шар
+                                    if (a_2 == D_Tiragi[c].Ball_1) //ищем второй шар
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_2)
+                                    if (a_2 == D_Tiragi[c].Ball_2)
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
 
                                     }
-                                    if (a_2 == DTiragi[c].Ball_3)
+                                    if (a_2 == D_Tiragi[c].Ball_3)
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_4)
+                                    if (a_2 == D_Tiragi[c].Ball_4)
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_5)
+                                    if (a_2 == D_Tiragi[c].Ball_5)
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
-                                    if (a_2 == DTiragi[c].Ball_6)
+                                    if (a_2 == D_Tiragi[c].Ball_6)
                                     {
                                         a_2_ok = true;
                                         a_2_ok = true;
-                                        if (a_3 == DTiragi[c].Ball_1)//ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_1)//ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
 
                                         }
-                                        if (a_3 == DTiragi[c].Ball_2) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_2) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_3) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_3) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_4) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_4) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_5) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_5) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
-                                        if (a_3 == DTiragi[c].Ball_6) //ищем треттий шар
+                                        if (a_3 == D_Tiragi[c].Ball_6) //ищем треттий шар
                                         {
                                             a_3_ok = true;
-                                            if (a_4 == DTiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
-                                            if (a_4 == DTiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_1) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_2) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_3) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_4) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_5) { a_4_ok = true; }//ищем четвертый шар
+                                            if (a_4 == D_Tiragi[c].Ball_6) { a_4_ok = true; }//ищем четвертый шар
                                         }
                                     }
 
