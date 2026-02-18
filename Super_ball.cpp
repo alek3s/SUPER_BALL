@@ -73,7 +73,7 @@ int main()
 
     string str;
 
-    cout << "введите количество SD_Tiragi " << '\n';
+    cout << "введите количество  SD_Tiragi " << '\n';
     cout << "SD_Tiragi -> ";
     cin >> SD_Tiragi;
     Tiragi* DTiragi = new Tiragi[SD_Tiragi];//динамический массив из структур)тут результаты тиражей в памяти)
