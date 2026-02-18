@@ -47,9 +47,9 @@ struct Ball
 };
 
 
-int SDTiragi = 0;       //для ввода количества тиражей вручную
-int SDBall = 0;         //для ввода количества чисел, учавствующих в тираже
-int Count = 0;          //счетчик количества тиражей считаных из файла
+int SD_Tiragi = 0;       //для ввода количества тиражей вручную
+int SD_Ball = 0;         //для ввода количества чисел, учавствующих в тираже
+int Count_T= 0;          //счетчик количества тиражей считаных из файла
 
 int main()
 {
@@ -73,17 +73,17 @@ int main()
 
     string str;
 
-    cout << "введите количество SDTiragi " << '\n';
-    cout << "SDTiragi -> ";
-    cin >> SDTiragi;
-    Tiragi* DTiragi = new Tiragi[SDTiragi];//динамический массив из структур)тут результаты тиражей в памяти)
+    cout << "введите количество SD_Tiragi " << '\n';
+    cout << "SD_Tiragi -> ";
+    cin >> SD_Tiragi;
+    Tiragi* DTiragi = new Tiragi[SD_Tiragi];//динамический массив из структур)тут результаты тиражей в памяти)
 
     //создаем динамический масив структур шаров с их характеристиками
-    cout << "введите количество  SDBall" << '\n';
+    cout << "введите количество  SD_Ball" << '\n';
     cout << "SDBool -> ";
 
-    cin >> SDBall;
-    Ball* DBall = new Ball[SDBall];
+    cin >> SD_Ball;
+    Ball* DBall = new Ball[SD_Ball];
 
 
     //организовываем считывание файла при первом запуске программы
@@ -91,7 +91,7 @@ int main()
     if (File_Read.is_open())
     {
         meniu = 8;
-        Count = 0;
+        Count_T = 0;
         while (!File_Read.eof())
         {
             File_Read >> buf;
@@ -116,43 +116,43 @@ int main()
                         switch (flag_2)
                         {
                         case 1://если это первое число в строке 
-                            DTiragi[Count].id = atoi(str.c_str());
+                            DTiragi[Count_T].id = atoi(str.c_str());
                             flag_2++;
                             break;
                         case 2://если это второе число в строке 
-                            DTiragi[Count].Date_Day = atoi(str.c_str());
+                            DTiragi[Count_T].Date_Day = atoi(str.c_str());
                             flag_2++;
                             break;
                         case 3://если это третье число в строке 
-                            DTiragi[Count].Date_Month = atoi(str.c_str());
+                            DTiragi[Count_T].Date_Month = atoi(str.c_str());
                             flag_2++;
                             break;
                         case 4://если это четвертое число в строке 
-                            DTiragi[Count].Date_Year = atoi(str.c_str());
+                            DTiragi[Count_T].Date_Year = atoi(str.c_str());
                             flag_2++;
                             break;
                         case 5://если это пятое число в строке 
-                            DTiragi[Count].Ball_1 = atoi(str.c_str());
+                            DTiragi[Count_T].Ball_1 = atoi(str.c_str());
                             flag_2++;
                             break;
                         case 6://если это шестое число в строке 
-                            DTiragi[Count].Ball_2 = atoi(str.c_str());
+                            DTiragi[Count_T].Ball_2 = atoi(str.c_str());
                             flag_2++;
                             break;
                         case 7://если это седьмое число в строке 
-                            DTiragi[Count].Ball_3 = atoi(str.c_str());
+                            DTiragi[Count_T].Ball_3 = atoi(str.c_str());
                             flag_2++;
                             break;
                         case 8://если это восьмое число в строке 
-                            DTiragi[Count].Ball_4 = atoi(str.c_str());
+                            DTiragi[Count_T].Ball_4 = atoi(str.c_str());
                             flag_2++;
                             break;
                         case 9://если это третье число в строке 
-                            DTiragi[Count].Ball_5 = atoi(str.c_str());
+                            DTiragi[Count_T].Ball_5 = atoi(str.c_str());
                             flag_2++;
                             break;
                         case 10://если это третье число в строке 
-                            DTiragi[Count].Ball_6 = atoi(str.c_str());
+                            DTiragi[Count_T].Ball_6 = atoi(str.c_str());
                             flag_2++;
                             break;
                         default:
@@ -165,7 +165,7 @@ int main()
                         cout << "\n";
                         str = "";
                         flag_2 = 1;//следующий проход это новая строка
-                        Count++;//считаем тиражи
+                        Count_T++;//считаем тиражи
                         break;
                     default:
                         break;
@@ -189,41 +189,41 @@ int main()
         if (meniu == 1)//смотрим вес каждого шара в тиражах
         {
             //очищаем массив структур шаров
-            for (int a = 0; a < SDBall; a++)
+            for (int a = 0; a < SD_Ball; a++)
             {
                 DBall[a].Last = 0;
                 DBall[a].Often = 0.0;
                 DBall[a].Weight = 0;
                 DBall[a].YES = false;
             }
-            for (int a = 0; a < SDBall; a++)//выбираем первый шар
+            for (int a = 0; a < SD_Ball; a++)//выбираем первый шар
             {
-                for (int b = 0; b < Count; b++)//пересматриваем все тиражи и вычисляем вес и частоту каждого шара
+                for (int b = 0; b < Count_T; b++)//пересматриваем все тиражи и вычисляем вес и частоту каждого шара
                 {
-                    if ((a + 1) == DTiragi[b].Ball_1) { DBall[a].Weight++; DBall[a].Often = (static_cast<double>(Count) / DBall[a].Weight); }
-                    if ((a + 1) == DTiragi[b].Ball_2) { DBall[a].Weight++; DBall[a].Often = (static_cast<double>(Count) / DBall[a].Weight); }
-                    if ((a + 1) == DTiragi[b].Ball_3) { DBall[a].Weight++; DBall[a].Often = (static_cast<double>(Count) / DBall[a].Weight); }
-                    if ((a + 1) == DTiragi[b].Ball_4) { DBall[a].Weight++; DBall[a].Often = (static_cast<double>(Count) / DBall[a].Weight); }
-                    if ((a + 1) == DTiragi[b].Ball_5) { DBall[a].Weight++; DBall[a].Often = (static_cast<double>(Count) / DBall[a].Weight); }
-                    if ((a + 1) == DTiragi[b].Ball_6) { DBall[a].Weight++; DBall[a].Often = (static_cast<double>(Count) / DBall[a].Weight); }
+                    if ((a + 1) == DTiragi[b].Ball_1) { DBall[a].Weight++; DBall[a].Often = (static_cast<double>(Count_T) / DBall[a].Weight); }
+                    if ((a + 1) == DTiragi[b].Ball_2) { DBall[a].Weight++; DBall[a].Often = (static_cast<double>(Count_T) / DBall[a].Weight); }
+                    if ((a + 1) == DTiragi[b].Ball_3) { DBall[a].Weight++; DBall[a].Often = (static_cast<double>(Count_T) / DBall[a].Weight); }
+                    if ((a + 1) == DTiragi[b].Ball_4) { DBall[a].Weight++; DBall[a].Often = (static_cast<double>(Count_T) / DBall[a].Weight); }
+                    if ((a + 1) == DTiragi[b].Ball_5) { DBall[a].Weight++; DBall[a].Often = (static_cast<double>(Count_T) / DBall[a].Weight); }
+                    if ((a + 1) == DTiragi[b].Ball_6) { DBall[a].Weight++; DBall[a].Often = (static_cast<double>(Count_T) / DBall[a].Weight); }
                 }
             }
             //ищем сколько тиражей прошло после последнего выпадания
-            for (int a = 0; a < SDBall; a++)
+            for (int a = 0; a < SD_Ball; a++)
             {
-                for (int b = Count - 1; b >= 0; b--)//пересматриваем все тиражи
+                for (int b = Count_T - 1; b >= 0; b--)//пересматриваем все тиражи
                 {
 
-                    if ((a + 1) == DTiragi[b].Ball_1) { DBall[a].Last = Count - b; break; }
-                    if ((a + 1) == DTiragi[b].Ball_2) { DBall[a].Last = Count - b; break; }
-                    if ((a + 1) == DTiragi[b].Ball_3) { DBall[a].Last = Count - b; break; }
-                    if ((a + 1) == DTiragi[b].Ball_4) { DBall[a].Last = Count - b; break; }
-                    if ((a + 1) == DTiragi[b].Ball_5) { DBall[a].Last = Count - b; break; }
-                    if ((a + 1) == DTiragi[b].Ball_6) { DBall[a].Last = Count - b; break; }
+                    if ((a + 1) == DTiragi[b].Ball_1) { DBall[a].Last = Count_T - b; break; }
+                    if ((a + 1) == DTiragi[b].Ball_2) { DBall[a].Last = Count_T - b; break; }
+                    if ((a + 1) == DTiragi[b].Ball_3) { DBall[a].Last = Count_T - b; break; }
+                    if ((a + 1) == DTiragi[b].Ball_4) { DBall[a].Last = Count_T - b; break; }
+                    if ((a + 1) == DTiragi[b].Ball_5) { DBall[a].Last = Count_T - b; break; }
+                    if ((a + 1) == DTiragi[b].Ball_6) { DBall[a].Last = Count_T - b; break; }
                 }
             }
             //анализируем наиболее вероятные шары к выпаданию в следующем тираже (которые давно не выпадали)
-            for (int a = 0; a < SDBall; a++)
+            for (int a = 0; a < SD_Ball; a++)
             {
 
                 if (0 > (DBall[a].Often - static_cast<double>(DBall[a].Last)))
@@ -300,7 +300,7 @@ int main()
             {
                 int Ball_1;
                 int Ball_2;
-                int count;
+                int Count_T;
             };
             //узнаем количество проходов для выделения памяти под массив
             for (a = 1; a < 49; a++)//выбираем первый шар
@@ -321,9 +321,9 @@ int main()
                     //записываем в масив проверяемую пару чисел
                     DinamichMasiv[i].Ball_1 = a;
                     DinamichMasiv[i].Ball_2 = b;
-                    DinamichMasiv[i].count = 0;
+                    DinamichMasiv[i].Count_T = 0;
 
-                    for (c = 0; c < Count; c++)//пересматриваем все тиражи
+                    for (c = 0; c < Count_T; c++)//пересматриваем все тиражи
                     {
                         if (a == DTiragi[c].Ball_1)
                         {
@@ -396,7 +396,7 @@ int main()
                         //сохраняем результаты после каждой строки
                         if (a_ok && b_ok)
                         {
-                            DinamichMasiv[i].count++;
+                            DinamichMasiv[i].Count_T++;
                             a_ok = false;
                             b_ok = false;
                         }
@@ -420,14 +420,14 @@ int main()
             //выводим результат поиска выпадания двух чисел
             for (j = 0; j < i; j++)
             {
-                if (DinamichMasiv[j].count > 0)
+                if (DinamichMasiv[j].Count_T > 0)
                 {
                     File_Write << j << "    " << "числа : " << "    "
                         << DinamichMasiv[j].Ball_1
                         << "    " << "и" << "    "
                         << DinamichMasiv[j].Ball_2 << "    "
                         << "выпадали в одном тираже вместе" << "    "
-                        << DinamichMasiv[j].count << "    " << "раз" << "\n";
+                        << DinamichMasiv[j].Count_T << "    " << "раз" << "\n";
                 }
             }
             system("cls");
@@ -457,7 +457,7 @@ int main()
         if (meniu == 10)//смотрим вес каждого шара в тиражах
         {
             //очищаем массив структур шаров
-            for (int a = 0; a < SDBall; a++)
+            for (int a = 0; a < SD_Ball; a++)
             {
                 DBall[a].Last = 0;
                 DBall[a].Often = 0.0;
@@ -473,10 +473,10 @@ int main()
                 return 1; // выполнить выход из программы
             }
 
-            for (int c = 0; c < Count; c++)// идем по тиражам
+            for (int c = 0; c < Count_T; c++)// идем по тиражам
             {
                 //очищаем массив структур шаров
-                for (int a = 0; a < SDBall; a++)
+                for (int a = 0; a < SD_Ball; a++)
                 {
                     DBall[a].Last = 0;
                     DBall[a].Often = 0.0;
@@ -491,7 +491,7 @@ int main()
 
 
 
-                for (int a = 0; a < SDBall; a++)//выбираемномер шара               
+                for (int a = 0; a < SD_Ball; a++)//выбираемномер шара               
                 {
                     for (int b = 0; b <= c; b++) //пересматриваем все тиражи и вычисляем вес и частоту каждого шара
                     {
@@ -528,7 +528,7 @@ int main()
                     }
                 }
                 //ищем сколько тиражей прошло после последнего выпадания
-                for (int a = 0; a < SDBall; a++)
+                for (int a = 0; a < SD_Ball; a++)
                 {
                     for (int b = c; b >= 0; b--)//пересматриваем все тиражи
                     {
@@ -542,7 +542,7 @@ int main()
                     }
                 }
                 //анализируем наиболее вероятные шары к выпаданию в следующем тираже (которые давно не выпадали)
-                for (int a = 0; a < SDBall; a++)
+                for (int a = 0; a < SD_Ball; a++)
                 {
 
                     if (0 > (DBall[a].Often - static_cast<double>(DBall[a].Last)))
@@ -554,12 +554,12 @@ int main()
 
                 //ищем самый малый интервал и самый большой 
 
-                for (int a = 0; a < SDBall; a++)//выбираем число
+                for (int a = 0; a < SD_Ball; a++)//выбираем число
                 {
                     bool one = false;//первое нахождение
                     bool two = false;//второе нахождение
                     int poz = 0;//предыдущая позиция(номер тиража)
-                    for (int C = 0; C < Count; C++)//прогоняем по тиражам
+                    for (int C = 0; C < Count_T; C++)//прогоняем по тиражам
                     {
                         if ((a + 1) == DTiragi[c].Ball_1)
                         {
@@ -653,7 +653,7 @@ int main()
                 int Ball_1;
                 int Ball_2;
                 int Ball_3;
-                int count;
+                int Count_T;
             };
             //узнаем количество проходов для выделения памяти под массив
             for (a_1 = 1; a_1 < (49 - 1); a_1++)//выбираем первый шар
@@ -679,9 +679,9 @@ int main()
                         DinamichMasiv[i].Ball_1 = a_1;
                         DinamichMasiv[i].Ball_2 = a_2;
                         DinamichMasiv[i].Ball_3 = a_3;
-                        DinamichMasiv[i].count = 0;
+                        DinamichMasiv[i].Count_T = 0;
 
-                        for (c = 0; c < Count; c++)//пересматриваем все тиражи
+                        for (c = 0; c < Count_T; c++)//пересматриваем все тиражи
                         {
                             if (a_1 == DTiragi[c].Ball_1)//ищем первый шар
                             {
@@ -1082,7 +1082,7 @@ int main()
                             //сохраняем результаты после каждой строки
                             if (a_1_ok && a_2_ok && a_3_ok)
                             {
-                                DinamichMasiv[i].count++;
+                                DinamichMasiv[i].Count_T++;
                                 a_1_ok = false;
                                 a_2_ok = false;
                                 a_3_ok = false;
@@ -1108,7 +1108,7 @@ int main()
             //выводим результат поиска выпадания двух чисел
             for (j = 0; j < i; j++)
             {
-                if (DinamichMasiv[j].count > 0)
+                if (DinamichMasiv[j].Count_T > 0)
                 {
                     File_Write << j << "числа:" << "    "
                         << DinamichMasiv[j].Ball_1 << "    "
@@ -1117,7 +1117,7 @@ int main()
                         << "и" << "    "
                         << DinamichMasiv[j].Ball_3 << "    "
                         << "выпадали вместе" << "    "
-                        << DinamichMasiv[j].count << "    "
+                        << DinamichMasiv[j].Count_T << "    "
                         << "раз" << "\n";
                 }
             }
@@ -1151,7 +1151,7 @@ int main()
                 int Ball_2;
                 int Ball_3;
                 int Ball_4;
-                int count;
+                int Count_T;
             };
             //узнаем сколько проходов для выделения памяти под массив
             for (a_1 = 1; a_1 < (49 - 2); a_1++)//выбираем первый шар
@@ -1184,9 +1184,9 @@ int main()
                             DinamichMasiv[i].Ball_2 = a_2;
                             DinamichMasiv[i].Ball_3 = a_3;
                             DinamichMasiv[i].Ball_4 = a_4;
-                            DinamichMasiv[i].count = 0;
+                            DinamichMasiv[i].Count_T = 0;
 
-                            for (c = 0; c < Count; c++)//пересматриваем все тиражи
+                            for (c = 0; c < Count_T; c++)//пересматриваем все тиражи
                             {
                                 if (a_1 == DTiragi[c].Ball_1)//ищем первый шар
                                 {
@@ -3598,7 +3598,7 @@ int main()
                                 //сохраняем результаты после каждой строки
                                 if (a_1_ok && a_2_ok && a_3_ok && a_4_ok)
                                 {
-                                    DinamichMasiv[i].count++;
+                                    DinamichMasiv[i].Count_T++;
                                     a_1_ok = false;
                                     a_2_ok = false;
                                     a_3_ok = false;
@@ -3626,7 +3626,7 @@ int main()
             //выводим результат поиска выпадания двух чисел
             for (j = 0; j < i; j++)
             {
-                if (DinamichMasiv[j].count > 0)
+                if (DinamichMasiv[j].Count_T > 0)
                 {
                     File_Write << j << "числа:" << "    "
                         << DinamichMasiv[j].Ball_1 << "    "
@@ -3637,7 +3637,7 @@ int main()
                         << "и" << "    "
                         << DinamichMasiv[j].Ball_4 << "    "
                         << "выпадали в одном тираже вместе" << "    "
-                        << DinamichMasiv[j].count << "    "
+                        << DinamichMasiv[j].Count_T << "    "
                         << "раз" << "\n";
                 }
             }
