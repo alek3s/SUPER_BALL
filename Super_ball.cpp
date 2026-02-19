@@ -15,8 +15,6 @@
 
 #include <stdexcept> // для std::exception и его потомков
 
-
-
 //структура содержит все данные о тиражах
 struct Tiragi
 {
@@ -49,11 +47,9 @@ struct Ball
 
 };
 
-
 int SD_Tiragi = 0;       //для ввода количества тиражей вручную
 int SD_Ball = 0;         //для ввода количества чисел, учавствующих в тираже
 int Count_T= 0;          //счетчик количества тиражей считаных из файла
-
 
 using namespace std;
 int main()
@@ -88,23 +84,17 @@ int main()
     cout << "введите количество шаров " << '\n';
     cout << "SD_Ball -> ";
     cin >> SD_Ball;
-    Ball* D_Ball = new Ball[SD_Ball];
-
+    Ball* D_Ball = new Ball[SD_Ball] ;
 
     //организовываем считывание файла при первом запуске программы
     File_Read.open("C:/game.txt", ios::binary || ios::in);
-    //unsigned long DWORD;
-    //if (!File_Read) // проверка что файл открыт -- пример с равесила "!inf" более рабочий,чем с msdn !inf.bad()
-    ///{
-     //   const DWORD err = ::GetLastError();
-
-     //   cerr << "ERROR: Uh oh, SomeText.txt could not be opened for reading! "  << endl;
-     //   cerr << err << std::endl;
-       //return;
-   // }
+    
     if (File_Read.is_open())
     {
         //meniu = 8;
+        //каждая строка в файле состоит из десяти чисел, разделенных табуляцией и точками
+        //необходимо разобрать каждую строку и поместить все числа в соответствующие структуры структуры
+       
         Count_T = 0;
         while (!File_Read.eof())
         {
@@ -161,11 +151,11 @@ int main()
                             D_Tiragi[Count_T].Ball_4 = atoi(str.c_str());
                             flag_2++;
                             break;
-                        case 9://если это третье число в строке 
+                        case 9://если это девятое число в строке 
                             D_Tiragi[Count_T].Ball_5 = atoi(str.c_str());
                             flag_2++;
                             break;
-                        case 10://если это третье число в строке 
+                        case 10://если это десятое число в строке 
                             D_Tiragi[Count_T].Ball_6 = atoi(str.c_str());
                             flag_2++;
                             break;
@@ -197,6 +187,8 @@ int main()
     buf = 0;
     //все готово для анализа 
 }
+
+//структура с тиражами укомплектована, можно приступать к анализу
 /*
 
     while (1)
