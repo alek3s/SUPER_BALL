@@ -68,6 +68,7 @@ int main()
     setlocale(LC_ALL, "rus");
 
     //создаем объект класса ofstream для записи в файл
+    
     ofstream File_Write;
 
     //создаем объект класса ofstream для чтения из файла
