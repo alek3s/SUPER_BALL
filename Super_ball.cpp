@@ -87,7 +87,7 @@ int main()
     Ball* D_Ball = new Ball[SD_Ball] ;
 
     //организовываем считывание файла при первом запуске программы
-    File_Read.open("C:/game.txt", ios::binary || ios::in);
+    File_Read.open("game.txt", ios::binary || ios::in);
     
     if (File_Read.is_open())
     {
